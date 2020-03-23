@@ -8,6 +8,8 @@ import java.util.Date;
 public class UserLog {
     private Integer id;
 
+    private String category;
+
     private String title;
 
     private String content;
@@ -24,6 +26,14 @@ public class UserLog {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category == null ? null : category.trim();
     }
 
     public String getTitle() {

@@ -18,8 +18,41 @@
 <blockquote class="layui-elem-quote layui-bg-green">
     <div id="nowTime"></div>
 </blockquote>
-<div class="layui-row layui-col-space10">
-    <div class="layui-col-lg6 layui-col-md6">
+<div class="layui-row layui-col-space10"  style="margin-top: 30px">
+    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
+        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <table class="layui-table mag0" lay-skin="line">
+            <colgroup>
+                <col>
+                <col width="110">
+            </colgroup>
+            <tbody class="hot_news"></tbody>
+        </table>
+    </div>
+    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
+        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <table class="layui-table mag0" lay-skin="line">
+            <colgroup>
+                <col>
+                <col width="110">
+            </colgroup>
+            <tbody class="hot_news"></tbody>
+        </table>
+    </div>
+</div>
+
+<div class="layui-row layui-col-space10" style="margin-top: 50px">
+    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
+        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <table class="layui-table mag0" lay-skin="line">
+            <colgroup>
+                <col>
+                <col width="110">
+            </colgroup>
+            <tbody class="hot_news"></tbody>
+        </table>
+    </div>
+    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
         <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
@@ -88,7 +121,7 @@
             parent.addTab($(this));
         })
         //最新文章列表
-        $.get("${ctx}/news/loadAllNews.action?page=1&limit=10",function(data){
+        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5",function(data){
             var hotNewsHtml = '';
             for(var i=0;i<data.data.length;i++){
                 hotNewsHtml += '<tr ondblclick=viewNews('+data.data[i].id+')>'
@@ -97,7 +130,7 @@
                     +'</tr>';
             }
             $(".hot_news").html(hotNewsHtml);
-            $(".userAll span").text(data.length);
+            /*$(".userAll span").text(data.length);*/
         })
 
     })

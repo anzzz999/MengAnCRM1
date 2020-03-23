@@ -29,16 +29,28 @@
 <form class="layui-form" method="post" id="searchFrm">
     <div class="layui-form-item">
         <div class="layui-inline">
+            <label class="layui-form-label">记录分类:</label>
+            <div class="layui-input-inline">
+                <select name="category" >
+                    <option value=""></option>
+                    <option value="计划任务">计划任务</option>
+                    <option value="工作日志">工作日志</option>
+                    <option value="联系记录">联系记录</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
             <label class="layui-form-label">记录标题:</label>
             <div class="layui-input-inline">
                 <%--<input type="hidden" name="uid" value="${user.userid}">--%>
-                <input type="text" name="title"  autocomplete="off" class="layui-input">
+                <input type="text" name="title"  autocomplete="off" class="layui-input" placeholder="可模糊查询">
             </div>
         </div>
         <div class="layui-inline">
             <label class="layui-form-label">记录内容:</label>
             <div class="layui-input-inline">
-                <input type="text" name="content"  autocomplete="off" class="layui-input">
+                <input type="text" name="content"  autocomplete="off" class="layui-input" placeholder="可模糊查询">
             </div>
         </div>
 
@@ -67,6 +79,18 @@
 <!-- 添加和修改的弹出层开始 -->
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
+        <div class="layui-form-item">
+            <label class="layui-form-label">记录分类:</label>
+            <div class="layui-input-block">
+                <select name="category" id="category">
+                    <option value=""></option>
+                    <option value="计划任务">计划任务</option>
+                    <option value="工作日志">工作日志</option>
+                    <option value="联系记录">联系记录</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">记录标题:</label>
             <div class="layui-input-block">
@@ -127,6 +151,7 @@
             ,cols: [[   //列表数据
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', title:'ID',align:'center'}
+                ,{field:'category', title:'分类',align:'center'}
                 ,{field:'title', title:'标题',align:'center'}
                  ,{field:'content', title:'内容',align:'center'}
                 ,{field:'createTime', title:'创建时间',align:'center'}

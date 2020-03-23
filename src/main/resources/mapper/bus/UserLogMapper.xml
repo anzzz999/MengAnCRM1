@@ -3,16 +3,17 @@
 <mapper namespace="com.mengan.bus.mapper.UserLogMapper">
   <resultMap id="BaseResultMap" type="com.mengan.bus.domain.UserLog">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="create_time" jdbcType="DATE" property="createTime" />
     <result column="uid" jdbcType="INTEGER" property="uid" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, title, content, create_time, uid
+    id, category, title, content, create_time, uid
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from user_log
     where id = #{id,jdbcType=INTEGER}
@@ -22,14 +23,22 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.mengan.bus.domain.UserLog">
-    insert into user_log (id, title, content, 
-      create_time, uid)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=DATE}, #{uid,jdbcType=INTEGER})
+    insert into user_log (id, category, title,
+      content, create_time, uid
+      )
+    values (#{id,jdbcType=INTEGER}, #{category,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR},
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=DATE}, #{uid,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.mengan.bus.domain.UserLog">
     insert into user_log
     <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
       <if test="title != null">
         title,
       </if>
@@ -44,6 +53,12 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        null,
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
@@ -61,6 +76,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.mengan.bus.domain.UserLog">
     update user_log
     <set>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
       </if>
@@ -78,7 +96,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mengan.bus.domain.UserLog">
     update user_log
-    set title = #{title,jdbcType=VARCHAR},
+    set category = #{category,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=DATE},
       uid = #{uid,jdbcType=INTEGER}
@@ -91,13 +110,16 @@
     <include refid="Base_Column_List" />
     from user_log
     <where>
+      <if test="category!=null and category!=''">
+        and category =#{category}
+      </if>
       <if test="title!=null and title!=''">
         and title like concat("%",#{title},"%")
       </if>
       <if test="content!=null and content!=''">
         and content like concat("%",#{content},"%")
       </if>
-        and uid=#{uid}
+      and uid=#{uid}
     </where>
     order by id desc
   </select>
