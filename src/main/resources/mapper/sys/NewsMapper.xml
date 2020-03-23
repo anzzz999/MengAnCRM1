@@ -3,16 +3,17 @@
 <mapper namespace="com.mengan.sys.mapper.NewsMapper">
   <resultMap id="BaseResultMap" type="com.mengan.sys.domain.News">
     <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="content" jdbcType="VARCHAR" property="content" />
     <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
     <result column="opername" jdbcType="VARCHAR" property="opername" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, title, content, createtime, opername
+    id, category, title, content, createtime, opername
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from sys_news
     where id = #{id,jdbcType=INTEGER}
@@ -22,16 +23,21 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.mengan.sys.domain.News">
-    insert into sys_news (id, title, content, 
-      createtime, opername)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{opername,jdbcType=VARCHAR})
+    insert into sys_news (id, category, title,
+      content, createtime, opername
+      )
+    values (#{id,jdbcType=INTEGER}, #{category,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR},
+      #{content,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{opername,jdbcType=VARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.mengan.sys.domain.News">
     insert into sys_news
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
+      </if>
+      <if test="category != null">
+        category,
       </if>
       <if test="title != null">
         title,
@@ -50,6 +56,9 @@
       <if test="id != null">
         null,
       </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
       <if test="title != null">
         #{title,jdbcType=VARCHAR},
       </if>
@@ -67,6 +76,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.mengan.sys.domain.News">
     update sys_news
     <set>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
       <if test="title != null">
         title = #{title,jdbcType=VARCHAR},
       </if>
@@ -84,7 +96,8 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mengan.sys.domain.News">
     update sys_news
-    set title = #{title,jdbcType=VARCHAR},
+    set category = #{category,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR},
       createtime = #{createtime,jdbcType=TIMESTAMP},
       opername = #{opername,jdbcType=VARCHAR}
@@ -97,6 +110,9 @@
     <include refid="Base_Column_List" />
     from sys_news
     <where>
+      <if test="category!=null and category!=''">
+        and category = #{category}
+      </if>
       <if test="title!=null and title!=''">
         and title like concat("%",#{title},"%")
       </if>

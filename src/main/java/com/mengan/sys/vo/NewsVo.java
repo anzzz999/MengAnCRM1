@@ -4,6 +4,7 @@ import com.mengan.sys.domain.News;
 import com.mengan.sys.domain.Role;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class NewsVo extends News {
@@ -60,4 +61,5 @@ public class NewsVo extends News {
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
+
 }

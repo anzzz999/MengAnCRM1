@@ -24,6 +24,7 @@ public class NewsController {
      */
     @RequestMapping("loadAllNews")
     public DataGridView loadAllNews(NewsVo newsVo) {
+        System.out.println("------------"+newsVo.getCategory());
         return this.newsService.queryAllNews(newsVo);
     }
 

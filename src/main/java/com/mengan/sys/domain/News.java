@@ -7,6 +7,8 @@ import java.util.Date;
 public class News {
     private Integer id;
 
+    private String category;
+
     private String title;
 
     private String content;
@@ -21,6 +23,14 @@ public class News {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category == null ? null : category.trim();
     }
 
     public String getTitle() {
@@ -53,5 +63,17 @@ public class News {
 
     public void setOpername(String opername) {
         this.opername = opername == null ? null : opername.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "id=" + id +
+                ", category='" + category + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", createtime=" + createtime +
+                ", opername='" + opername + '\'' +
+                '}';
     }
 }

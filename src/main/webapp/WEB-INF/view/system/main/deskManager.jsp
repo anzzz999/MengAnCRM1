@@ -20,53 +20,53 @@
 </blockquote>
 <div class="layui-row layui-col-space10"  style="margin-top: 30px">
     <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
-        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <blockquote class="layui-elem-quote title" style="text-align: center"><font color='red'><b>用户投诉</b></font></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
                 <col width="110">
             </colgroup>
-            <tbody class="hot_news"></tbody>
+            <tbody class="hot_news" id="hot_complain" ></tbody>
         </table>
     </div>
     <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
-        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <blockquote class="layui-elem-quote title" style="text-align: center ;"><font color='blue'><b>项目总结</b></font></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
                 <col width="110">
             </colgroup>
-            <tbody class="hot_news"></tbody>
+            <tbody class="hot_news" id="hot_summary"></tbody>
         </table>
     </div>
 </div>
 
 <div class="layui-row layui-col-space10" style="margin-top: 50px">
     <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
-        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <blockquote class="layui-elem-quote title" style="text-align: center"><font color='#20b2aa'><b>需求处理</b></font></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
                 <col width="110">
             </colgroup>
-            <tbody class="hot_news"></tbody>
+            <tbody class="hot_news" id="hot_need"></tbody>
         </table>
     </div>
     <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
-        <blockquote class="layui-elem-quote title">最新公告 <i class="layui-icon layui-red">&#xe756;</i></blockquote>
+        <blockquote class="layui-elem-quote title" style="text-align: center"><b>最新公告</b></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
                 <col width="110">
             </colgroup>
-            <tbody class="hot_news"></tbody>
+            <tbody class="viewNews"  id="hot_others"></tbody>
         </table>
     </div>
 </div>
 
 <!-- 查看公告的div 开始-->
 <div id="desk_viewNewsDiv" style="padding: 10px;display: none;">
-    <h2 id="view_title" align="center"></h2>
+    <h2 id="view_other" align="center"></h2>
     <hr>
     <div style="text-align: right;">
         发布人:<span id="view_opername"></span>  <span style="display: inline-block;width: 20px" ></span>
@@ -120,8 +120,9 @@
         $(".panel a").click(function(){
             parent.addTab($(this));
         })
-        //最新文章列表
-        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5",function(data){
+
+        //最新公告用户投诉
+        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5&category=用户投诉",function(data){
             var hotNewsHtml = '';
             for(var i=0;i<data.data.length;i++){
                 hotNewsHtml += '<tr ondblclick=viewNews('+data.data[i].id+')>'
@@ -129,9 +130,49 @@
                     +'<td>'+data.data[i].createtime.substring(0,10)+'</td>'
                     +'</tr>';
             }
-            $(".hot_news").html(hotNewsHtml);
+            $("#hot_complain").html(hotNewsHtml);
             /*$(".userAll span").text(data.length);*/
         })
+
+        //最新公告项目总结
+        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5&category=项目总结",function(data){
+            var hotNewsHtml = '';
+            for(var i=0;i<data.data.length;i++){
+                hotNewsHtml += '<tr ondblclick=viewNews('+data.data[i].id+')>'
+                    +'<td align="left"><a href="javascript:;"> '+data.data[i].title+'</a></td>'
+                    +'<td>'+data.data[i].createtime.substring(0,10)+'</td>'
+                    +'</tr>';
+            }
+            $("#hot_summary").html(hotNewsHtml);
+            /*$(".userAll span").text(data.length);*/
+        })
+
+        //最新公告需求处理
+        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5&category=需求处理",function(data){
+            var hotNewsHtml = '';
+            for(var i=0;i<data.data.length;i++){
+                hotNewsHtml += '<tr ondblclick=viewNews('+data.data[i].id+')>'
+                    +'<td align="left"><a href="javascript:;"> '+data.data[i].title+'</a></td>'
+                    +'<td>'+data.data[i].createtime.substring(0,10)+'</td>'
+                    +'</tr>';
+            }
+            $("#hot_need").html(hotNewsHtml);
+            /*$(".userAll span").text(data.length);*/
+        })
+
+        //最新公告其他
+        $.get("${ctx}/news/loadAllNews.action?page=1&limit=5&category=其他",function(data){
+            var hotNewsHtml = '';
+            for(var i=0;i<data.data.length;i++){
+                hotNewsHtml += '<tr ondblclick=viewNews('+data.data[i].id+')>'
+                    +'<td align="left"><a href="javascript:;"> '+data.data[i].title+'</a></td>'
+                    +'<td>'+data.data[i].createtime.substring(0,10)+'</td>'
+                    +'</tr>';
+            }
+            $("#hot_others").html(hotNewsHtml);
+            /*$(".userAll span").text(data.length);*/
+        })
+
 
     })
 

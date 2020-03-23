@@ -32,6 +32,18 @@
 <form class="layui-form" method="post" id="searchFrm">
     <div class="layui-form-item">
         <div class="layui-inline">
+            <label class="layui-form-label">公告分类:</label>
+            <div class="layui-input-inline">
+                <select name="category" >
+                    <option value=""></option>
+                    <option value="用户投诉">用户投诉</option>
+                    <option value="项目总结">项目总结</option>
+                    <option value="需求处理">需求处理</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
             <label class="layui-form-label">公告标题:</label>
             <div class="layui-input-inline">
                 <input type="text" name="title"  autocomplete="off" class="layui-input">
@@ -87,6 +99,18 @@
 <!-- 添加和修改的弹出层开始 -->
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
+        <div class="layui-form-item">
+            <label class="layui-form-label">记录分类:</label>
+            <div class="layui-input-block">
+                <select name="category" >
+                    <option value=""></option>
+                    <option value="用户投诉">用户投诉</option>
+                    <option value="项目总结">项目总结</option>
+                    <option value="需求处理">需求处理</option>
+                    <option value="其他">其他</option>
+                </select>
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">公告标题:</label>
             <div class="layui-input-block">
@@ -160,6 +184,7 @@
             ,cols: [[   //列表数据
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'id', title:'ID',align:'center'}
+                ,{field:'category', title:'公告分类',align:'center'}
                 ,{field:'title', title:'公告标题',align:'center'}
                 /* ,{field:'content', title:'公告内容',align:'center'} */
                 ,{field:'createtime', title:'发布时间',align:'center'}
