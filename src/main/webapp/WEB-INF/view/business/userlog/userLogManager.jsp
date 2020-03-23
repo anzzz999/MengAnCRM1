@@ -80,9 +80,9 @@
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
         <div class="layui-form-item">
-            <label class="layui-form-label">记录分类:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>记录分类:</label>
             <div class="layui-input-block">
-                <select name="category" id="category">
+                <select name="category" id="category" lay-verify="required">
                     <option value=""></option>
                     <option value="计划任务">计划任务</option>
                     <option value="工作日志">工作日志</option>
@@ -92,17 +92,17 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">记录标题:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>记录标题:</label>
             <div class="layui-input-block">
                 <input type="hidden" name="id">
-                <input type="text" name="title"  placeholder="请输入记录标题" autocomplete="off"
+                <input type="text" name="title"  placeholder="请输入记录标题" autocomplete="off" lay-verify="required"
                        class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">记录内容:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>记录内容:</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容"  name="content" lay-verify="content" id="content"  class="layui-textarea" style="height: 330px"></textarea>
+                <textarea placeholder="请输入内容"  name="content" lay-verify="required|content" id="content"  class="layui-textarea" style="height: 330px"></textarea>
             </div>
         </div>
         <div class="layui-form-item" style="text-align: center;">

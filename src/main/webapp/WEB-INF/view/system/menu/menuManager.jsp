@@ -66,10 +66,10 @@
 	<div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
 		<form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
 			<div class="layui-form-item">
-				  <label class="layui-form-label">父级菜单：</label>
+				  <label class="layui-form-label"><span style="color: red;">* </span>父级菜单:</label>
 				   <div class="layui-input-block">
 				      <div class="layui-unselect layui-form-select" id="pid_div">
-				        <div class="layui-select-title">
+				        <div class="layui-select-title" lay-verify="required">
 				         <%-- <input type="hidden" name="pid" id="pid">--%>
 				         <%-- <input type="text" name="pid" id="pid" placeholder="请选择" readonly="" class="layui-input layui-unselect">--%>
                         <select name="pid" id="pid">
@@ -86,11 +86,11 @@
 				  </div>
 			</div>
 			<div class="layui-form-item">
-				<label class="layui-form-label">菜单名称:</label>
+				<label class="layui-form-label"><span style="color: red;">* </span>菜单名称:</label>
 				<div class="layui-input-block">
 					<input type="hidden" name="id">
-					<input type="text" name="title"  placeholder="请输入菜单名称" autocomplete="off"
-						class="layui-input">
+					<input type="text" name="title"  placeholder="请输入菜单名称" autocomplete="off" lay-verify="required"
+						class="layui-input" >
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -104,7 +104,7 @@
 				<div class="layui-inline">
 					<label class="layui-form-label">菜单图标:</label>
 					<div class="layui-input-inline">
-						<input type="text" name="icon"   placeholder="请输入菜单图标" lay-verify="required" autocomplete="off"
+						<input type="text" name="icon"   placeholder="请输入菜单图标"  autocomplete="off"
 							class="layui-input">
 					</div>
 				</div>

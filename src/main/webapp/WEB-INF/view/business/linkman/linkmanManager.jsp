@@ -88,7 +88,7 @@
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
 
         <div class="layui-form-item">
-            <label class="layui-form-label">姓名：</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>姓名：</label>
             <div class="layui-input-block">
                 <input type="hidden" name="id">
                 <input type="text" name="name"  placeholder="请输入公司联系人姓名" autocomplete="off" lay-verify="required"
@@ -97,7 +97,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">性别:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>性别:</label>
                 <div class="layui-input-inline">
                     <select name="sex"  >
                         <option value=""></option>
@@ -107,17 +107,17 @@
                 </div>
             </div>
             <div class="layui-inline">
-                <label class="layui-form-label">生日:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>生日:</label>
                 <div class="layui-input-inline">
-                    <input type="text" class="layui-input" name="birthday" id="birthday" placeholder="输入格式为 yyyy-MM-dd">
+                    <input type="text" class="layui-input" name="birthday" id="birthday" placeholder="输入格式为 yyyy-MM-dd" lay-verify="required">
                 </div>
             </div>
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">联系电话:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>:</label>
             <div class="layui-input-block">
-                <input type="text" name="phone"  placeholder="请输入联系人电话" autocomplete="off"
+                <input type="text" name="phone"  placeholder="请输入联系人电话" autocomplete="off" lay-verify="required"
                        class="layui-input">
             </div>
         </div>
@@ -128,10 +128,10 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">客户公司:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>客户公司:</label>
             <div class="layui-input-block ">
 
-                    <select name="cid" id="cid" >
+                    <select name="cid" id="cid" lay-verify="required">
                         <option value=""></option>
 
                     </select>

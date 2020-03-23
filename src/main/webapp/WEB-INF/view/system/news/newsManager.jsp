@@ -100,9 +100,9 @@
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
         <div class="layui-form-item">
-            <label class="layui-form-label">记录分类:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>记录分类:</label>
             <div class="layui-input-block">
-                <select name="category" >
+                <select name="category"  lay-verify="required">
                     <option value=""></option>
                     <option value="用户投诉">用户投诉</option>
                     <option value="项目总结">项目总结</option>
@@ -112,17 +112,17 @@
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">公告标题:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>公告标题:</label>
             <div class="layui-input-block">
                 <input type="hidden" name="id">
                 <input type="text" name="title"  placeholder="请输入公告标题" autocomplete="off"
-                       class="layui-input">
+                       class="layui-input" lay-verify="required">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">公告内容:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>公告内容:</label>
             <div class="layui-input-block">
-                <textarea placeholder="请输入内容"  name="content" lay-verify="content" id="content"  class="layui-textarea" style="height: 330px"></textarea>
+                <textarea placeholder="请输入内容"  name="content" lay-verify="content" id="content"  class="layui-textarea" style="height: 330px" lay-verify="required"></textarea>
             </div>
         </div>
         <div class="layui-form-item" style="text-align: center;">

@@ -95,7 +95,7 @@
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
 
         <div class="layui-form-item">
-            <label class="layui-form-label">公司名称：</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>公司名称：</label>
             <div class="layui-input-block">
                 <input type="hidden" name="id">
                 <input type="text" name="name"  placeholder="请输入公司名称" autocomplete="off" lay-verify="required"
@@ -121,26 +121,26 @@
             </div>
         </div>--%>
         <div class="layui-form-item">
-            <label class="layui-form-label">区域:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>区域:</label>
             <div class="layui-input-block">
-                <input type="text" name="area"  placeholder="请输入区域名称" autocomplete="off"
+                <input type="text" name="area"  placeholder="请输入区域名称" autocomplete="off" lay-verify="required"
                        class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">行业:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>行业:</label>
             <div class="layui-input-block">
-                <input type="text" name="industry" placeholder="请输入公司行业" autocomplete="off"
+                <input type="text" name="industry" placeholder="请输入公司行业" autocomplete="off" lay-verify="required"
                        class="layui-input">
             </div>
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">状态:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>状态:</label>
                 <div class="layui-input-inline">
                     <%--<input type="text" name="status"   placeholder="请输入菜单图标"  autocomplete="off"
                            class="layui-input">--%>
-                        <select name="status"  >
+                        <select name="status"  lay-verify="required">
                             <option value=""></option>
                             <option value="1">已签约</option>
                             <option value="2">跟进</option>
@@ -149,9 +149,9 @@
                 </div>
             </div>
             <div class="layui-inline">
-                <label class="layui-form-label">等级:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>等级:</label>
                 <div class="layui-input-inline">
-                        <select name="level" >
+                        <select name="level" lay-verify="required">
                             <option value=""></option>
                             <option value="1">☆</option>
                             <option value="2">☆☆☆</option>

@@ -94,7 +94,7 @@
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">用户姓名:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>用户姓名:</label>
                 <div class="layui-input-inline">
                     <input type="hidden" name="userid">
                     <input type="text" name="realname" lay-verify="required"   placeholder="请输入用户姓名" autocomplete="off"
@@ -102,7 +102,7 @@
                 </div>
             </div>
             <div class="layui-inline">
-                <label class="layui-form-label">登陆名称:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>登陆名称:</label>
                 <div class="layui-input-inline">
                     <input type="text" name="loginname" lay-verify="required"  placeholder="请输入用户登陆名称" autocomplete="off"
                            class="layui-input">
@@ -127,7 +127,7 @@
         </div>
         <div class="layui-form-item">
             <div class="layui-inline">
-                <label class="layui-form-label">用户电话:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>用户电话:</label>
                 <div class="layui-input-inline">
                     <input type="text" name="phone" lay-verify="required|phone"  placeholder="请输入用户电话" autocomplete="off"
                            class="layui-input">

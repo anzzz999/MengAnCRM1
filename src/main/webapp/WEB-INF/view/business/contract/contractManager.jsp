@@ -58,22 +58,22 @@
 <div style="display: none;padding: 20px" id="saveOrUpdateDiv" >
     <form class="layui-form"  lay-filter="dataFrm" id="dataFrm">
         <div class="layui-form-item">
-            <label class="layui-form-label">客户公司:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>客户公司:</label>
             <div class="layui-input-block">
                 <input type="hidden" name="id">
-                <select name="cid" id="cid" >
+                <select name="cid" id="cid"  lay-verify="required">
                     <option value=""></option>
 
                 </select>
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">选择文件:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>选择文件:</label>
             <div class="layui-input-block">
-                <button type="button" class="layui-btn" id="uploadBtn">
+                <button type="button" class="layui-btn  layui-btn-sm" id="uploadBtn" >
                     <i class="layui-icon">&#xe67c;</i>上传合同
                 </button>
-                <input type="hidden" name="url" id="url">
+                <input type="hidden" name="url" id="url" lay-verify="required">
                 <%--<textarea placeholder="请输入内容"  name="content" lay-verify="content" id="content"  class="layui-textarea" style="height: 330px"></textarea>--%>
             </div>
         </div>
