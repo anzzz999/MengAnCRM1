@@ -69,7 +69,7 @@
 				  <label class="layui-form-label"><span style="color: red;">* </span>父级菜单:</label>
 				   <div class="layui-input-block">
 				      <div class="layui-unselect layui-form-select" id="pid_div">
-				        <div class="layui-select-title" lay-verify="required">
+				        <div class="layui-select-title" >
 				         <%-- <input type="hidden" name="pid" id="pid">--%>
 				         <%-- <input type="text" name="pid" id="pid" placeholder="请选择" readonly="" class="layui-input layui-unselect">--%>
                         <select name="pid" id="pid">

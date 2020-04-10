@@ -35,13 +35,13 @@
         <div class="layui-inline">
             <label class="layui-form-label">角色名称:</label>
             <div class="layui-input-inline">
-                <input type="text" name="rolename"  autocomplete="off" class="layui-input">
+                <input type="text" name="rolename"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
         <div class="layui-inline">
             <label class="layui-form-label">角色备注:</label>
             <div class="layui-input-inline">
-                <input type="text" name="roledesc"  autocomplete="off" class="layui-input">
+                <input type="text" name="roledesc"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
         <div class="layui-inline">

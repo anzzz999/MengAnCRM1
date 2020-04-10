@@ -16,11 +16,52 @@
 </head>
 <body class="childrenBody">
 <blockquote class="layui-elem-quote layui-bg-green">
-    <div id="nowTime"></div>
+    <div id="nowTime" style="text-align: center"></div>
 </blockquote>
-<div class="layui-row layui-col-space10"  style="margin-top: 30px">
-    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
-        <blockquote class="layui-elem-quote title" style="text-align: center"><font color='red'><b>用户投诉</b></font></blockquote>
+
+<%--新增开始--%>
+<div class="layui-row layui-col-space5">
+    <div class="layui-col-md8">
+        <div class="layui-carousel" id="myCarousel" >
+            <div carousel-item>
+                <div><img src="${ctx }/resources/images/bg1.jpg" height="100%" width="100%"></div>
+                <div><img src="${ctx }/resources/images/bg2.jpg" height="100%" width="100%"></div>
+                <div><img src="${ctx }/resources/images/bg3.jpg" height="100%" width="100%"></div>
+                <div><img src="${ctx }/resources/images/bg4.jpg" height="100%" width="100%"></div>
+                <div><img src="${ctx }/resources/images/bg5.jpg" height="100%" width="100%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-col-md4">
+        <div class="layui-row grid-demo">
+            <div class="layui-col-md12">
+                <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><b>最新公告</b></blockquote>
+                <table class="layui-table mag0" lay-skin="line">
+                    <colgroup>
+                        <col>
+                        <col width="110">
+                    </colgroup>
+                    <tbody class="viewNews"  id="hot_others"></tbody>
+                </table>
+            </div>
+            <div class="layui-col-md12">
+                <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><b>项目总结</b></blockquote>
+                <table class="layui-table mag0" lay-skin="line">
+                    <colgroup>
+                        <col>
+                        <col width="110">
+                    </colgroup>
+                    <tbody class="hot_news" id="hot_summary"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<%--新增结束--%>
+<%--<div class="layui-row layui-col-space10"  style="margin-top: 30px">
+ &lt;%&ndash;   <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
+        <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><font color='red'><b>用户投诉</b></font></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
@@ -28,9 +69,33 @@
             </colgroup>
             <tbody class="hot_news" id="hot_complain" ></tbody>
         </table>
-    </div>
-    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
-        <blockquote class="layui-elem-quote title" style="text-align: center ;"><font color='blue'><b>项目总结</b></font></blockquote>
+    </div>&ndash;%&gt;
+     <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset4">
+         <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><b>最新公告</b></blockquote>
+         <table class="layui-table mag0" lay-skin="line">
+             <colgroup>
+                 <col>
+                 <col width="110">
+             </colgroup>
+             <tbody class="viewNews"  id="hot_others"></tbody>
+         </table>
+     </div>
+
+</div>
+<br>
+<div class="layui-row layui-col-space10" style="margin-top: 50px">
+&lt;%&ndash;    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
+        <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><font color='#20b2aa'><b>需求处理</b></font></blockquote>
+        <table class="layui-table mag0" lay-skin="line">
+            <colgroup>
+                <col>
+                <col width="110">
+            </colgroup>
+            <tbody class="hot_news" id="hot_need"></tbody>
+        </table>
+    </div>&ndash;%&gt;
+    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset4">
+        <blockquote  style="text-align: center;background-color: #dbdbdb;padding: 10px"><font color='blue'><b>项目总结</b></font></blockquote>
         <table class="layui-table mag0" lay-skin="line">
             <colgroup>
                 <col>
@@ -39,30 +104,7 @@
             <tbody class="hot_news" id="hot_summary"></tbody>
         </table>
     </div>
-</div>
-
-<div class="layui-row layui-col-space10" style="margin-top: 50px">
-    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset1">
-        <blockquote class="layui-elem-quote title" style="text-align: center"><font color='#20b2aa'><b>需求处理</b></font></blockquote>
-        <table class="layui-table mag0" lay-skin="line">
-            <colgroup>
-                <col>
-                <col width="110">
-            </colgroup>
-            <tbody class="hot_news" id="hot_need"></tbody>
-        </table>
-    </div>
-    <div class="layui-col-lg4 layui-col-md4 layui-col-md-offset2">
-        <blockquote class="layui-elem-quote title" style="text-align: center"><b>最新公告</b></blockquote>
-        <table class="layui-table mag0" lay-skin="line">
-            <colgroup>
-                <col>
-                <col width="110">
-            </colgroup>
-            <tbody class="viewNews"  id="hot_others"></tbody>
-        </table>
-    </div>
-</div>
+</div>--%>
 
 <!-- 查看公告的div 开始-->
 <div id="desk_viewNewsDiv" style="padding: 10px;display: none;">
@@ -99,16 +141,24 @@
         var minute = dateObj.getMinutes(); //当前系统时间的分钟值
         var second = dateObj.getSeconds(); //当前系统时间的秒钟值
         var timeValue = "" +((hour >= 12) ? (hour >= 18) ? "晚上" : "下午" : "上午" ); //当前时间属于上午、晚上还是下午
-        newDate = dateFilter(year)+"年"+dateFilter(month)+"月"+dateFilter(date)+"日 "+" "+dateFilter(hour)+":"+dateFilter(minute)+":"+dateFilter(second);
+        newDate = dateFilter(year)+"年"+dateFilter(month)+"月"+dateFilter(date)+"日 "+" ";
         document.getElementById("nowTime").innerHTML = "亲爱的${user.realname}，"+timeValue+"好！ 欢迎使用梦安客户关系管理系统。当前时间为： "+newDate+"　"+week;
         setTimeout("getLangDate()",1000);
     }
 
-    layui.use(['form','element','layer','jquery'],function(){
+    layui.use(['form','element','layer','jquery','carousel'],function(){
         var form = layui.form,
             layer = parent.layer === undefined ? layui.layer : top.layer,
             element = layui.element;
-        $ = layui.jquery;
+            carousel = layui.carousel;
+            $ = layui.jquery;
+        carousel.render({
+            elem: '#myCarousel'
+            ,width: '100%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            ,height: '475px'
+            //,anim: 'updown' //切换动画方式
+        });
         //上次登录时间【此处应该从接口获取，实际使用中请自行更换】
         $(".loginTime").html(newDate.split("日")[0]+"日</br>"+newDate.split("日")[1]);
         //icon动画

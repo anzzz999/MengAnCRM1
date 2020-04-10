@@ -47,4 +47,22 @@ public class BusController {
     public String toContractManager() {
         return "business/contract/contractManager";
     }
+    /**
+     * 跳转到需求处理
+     *
+     * @return
+     */
+    @RequestMapping("toDemandManager")
+    public String toDemandManager() {
+        return "business/demand/demandManager";
+    }
+    /**
+     * 跳转到投诉处理
+     *
+     * @return
+     */
+    @RequestMapping("toComplaintManager")
+    public String toComplaintManager() {
+        return "business/complaint/complaintManager";
+    }
 }

@@ -50,7 +50,7 @@
 		<div class="layui-side layui-bg-black">
 			<div class="user-photo">
 				<a class="img" title="我的头像" ><img src="${ctx }/resources/images/myface.jpg" class="userAvatar"></a>
-				<p>你好！<span class="userName">${user.realname }</span>, 欢迎登录</p>
+				<p>你好！<span class="userName"><font color="orange">${user.realname }</font></span>, 欢迎登录</p>
 			</div>
 			<!-- 搜索 -->
 <%--			<div class="layui-form component">

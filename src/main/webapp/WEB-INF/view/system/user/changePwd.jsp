@@ -22,13 +22,13 @@
 <body class="childrenBody">
 <form class="layui-form layui-row changePwd" id="changePwd">
     <div class="layui-col-xs12 layui-col-sm6 layui-col-md6">
-        <div class="layui-input-block layui-red pwdTips">初始密码为“123456”，新密码必须两次输入一致才能提交</div>
+        <div class="layui-input-block layui-red pwdTips">初始密码为“123456”，请注意修改</div>
         <div class="layui-form-item">
-            <label class="layui-form-label">用户名</label>
+            <label class="layui-form-label">用户账号</label>
             <div class="layui-input-block">
                 <input type="hidden" name="userid" value="${user.userid}">
                 <input type="hidden" name="loginname" value="${user.loginname}">
-                <input type="text"  value="${user.realname }" disabled class="layui-input layui-disabled">
+                <input type="text"  value="${user.loginname }" disabled class="layui-input layui-disabled">
             </div>
         </div>
         <div class="layui-form-item">

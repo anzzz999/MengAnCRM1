@@ -27,41 +27,35 @@
         <div class="layui-inline">
             <label class="layui-form-label">用户姓名:</label>
             <div class="layui-input-inline">
-                <input type="text" name="realname"  autocomplete="off" class="layui-input">
+                <input type="text" name="realname"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
         <div class="layui-inline">
             <label class="layui-form-label">登陆名称:</label>
             <div class="layui-input-inline">
-                <input type="text" name="loginname"  autocomplete="off" class="layui-input">
+                <input type="text" name="loginname"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
         <div class="layui-inline">
             <label class="layui-form-label">用户地址:</label>
             <div class="layui-input-inline">
-                <input type="text" name="address"  autocomplete="off" class="layui-input">
+                <input type="text" name="address"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
-    </div>
+<%--    </div>
 
-    <div class="layui-form-item">
-        <div class="layui-inline">
-            <label class="layui-form-label">用户电话:</label>
-            <div class="layui-input-inline">
-                <input type="text" name="phone"  autocomplete="off" class="layui-input">
-            </div>
-        </div>
-        <div class="layui-inline">
-            <label class="layui-form-label">身份证号:</label>
-            <div class="layui-input-inline">
-                <input type="text" name="identity"  autocomplete="off" class="layui-input">
-            </div>
-        </div>
+    <div class="layui-form-item">--%>
         <div class="layui-inline">
             <label class="layui-form-label">性别:</label>
             <div class="layui-input-inline">
                 <input type="radio" name="sex" value="1" title="男">
                 <input type="radio" name="sex" value="0" title="女">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">身份证号:</label>
+            <div class="layui-input-inline">
+                <input type="text" name="identity"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
     </div>
@@ -85,7 +79,7 @@
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
     <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="resetUserPwd">重置密码</a>
     <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
-    <a class="layui-btn layui-btn-warm layui-btn-xs" lay-event="selectUserRole">分配角色</a>
+    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="selectUserRole">分配角色</a>
 </div>
 <!-- 数据表格结束 -->
 
@@ -102,9 +96,9 @@
                 </div>
             </div>
             <div class="layui-inline">
-                <label class="layui-form-label"><span style="color: red;">* </span>登陆名称:</label>
+                <label class="layui-form-label"><span style="color: red;">* </span>登陆账号:</label>
                 <div class="layui-input-inline">
-                    <input type="text" name="loginname" lay-verify="required"  placeholder="请输入用户登陆名称" autocomplete="off"
+                    <input type="text" name="loginname" lay-verify="required"  placeholder="请输入用户登陆账号" autocomplete="off"
                            class="layui-input">
                 </div>
             </div>
@@ -198,7 +192,7 @@
                 {type: 'checkbox', fixed: 'left'}
                 ,{field:'userid', title:'ID',align:'center'}
                 ,{field:'realname', title:'用户姓名',align:'center'}
-                ,{field:'loginname', title:'登陆名',align:'center'}
+                ,{field:'loginname', title:'登陆账号',align:'center'}
                 ,{field:'identity', title:'身份证号',align:'center'}
                 ,{field:'phone', title:'用户电话',align:'center'}
                 ,{field:'address', title:'用户地址',align:'center'}

@@ -29,7 +29,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">合同备注:</label>
             <div class="layui-input-inline">
-                <input type="text" name="remark"  autocomplete="off" class="layui-input">
+                <input type="text" name="remark"  autocomplete="off" class="layui-input" placeholder="可模糊搜索">
             </div>
         </div>
 
