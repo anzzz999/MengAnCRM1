@@ -62,7 +62,7 @@ public class FileController {
 
 
     /**
-     * 下载图片
+     * 下载合同
      * @param path
      * @param response
      * @return
