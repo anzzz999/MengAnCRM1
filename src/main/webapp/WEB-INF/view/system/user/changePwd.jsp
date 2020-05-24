@@ -22,7 +22,7 @@
 <body class="childrenBody">
 <form class="layui-form layui-row changePwd" id="changePwd">
     <div class="layui-col-xs12 layui-col-sm6 layui-col-md6">
-        <div class="layui-input-block layui-red pwdTips">初始密码为“123456”，请注意修改</div>
+        <%--<div class="layui-input-block layui-red pwdTips">初始密码为“123456”，请注意修改</div>--%>
         <div class="layui-form-item">
             <label class="layui-form-label">用户账号</label>
             <div class="layui-input-block">

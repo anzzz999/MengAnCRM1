@@ -38,7 +38,7 @@
         <div class="layui-inline">
             <label class="layui-form-label">电话查询：</label>
             <div class="layui-input-inline" >
-                <input type="text" name="area"  autocomplete="off" class="layui-input" placeholder="请输入客户联系人电话" >
+                <input type="text" name="phone"  autocomplete="off" class="layui-input" placeholder="请输入客户联系人电话" >
             </div>
         </div>
 
@@ -115,7 +115,7 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label"><span style="color: red;">* </span>:</label>
+            <label class="layui-form-label"><span style="color: red;">* </span>电话:</label>
             <div class="layui-input-block">
                 <input type="text" name="phone"  placeholder="请输入联系人电话" autocomplete="off" lay-verify="required"
                        class="layui-input">
